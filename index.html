@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Building Community-Oriented Infrastructures for AI Experimentation</title>
+
+  <!-- Reveal.js core -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reset.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- Slide 1 — Bridge from Azucena -->
+      <section id="bridge">
+        <h1>What the lab builds and runs</h1>
+        <p class="lead">Stephen Zweibel &middot; CUNY AI Lab &middot; Mina Rees Library</p>
+        <div class="content">
+          <ul>
+            <li>I work on how faculty and students build and run their own AI tools</li>
+            <li>And on what agentic AI is doing to research, and to libraries</li>
+          </ul>
+        </div>
+        <aside class="notes">
+          Let me pull the lens back from any one tool. I work on the layer underneath, where faculty and students build and run their own AI tools, and on what agentic AI is doing to research and to libraries.
+        </aside>
+      </section>
+
+      <!-- Slide 2 — Tools Portal -->
+      <section id="tools-portal">
+        <h2>Tools Portal</h2>
+        <p class="kicker">tools.ailab.gc.cuny.edu</p>
+        <div class="content">
+          <ul>
+            <li>Standalone, single-purpose apps, separate from the chat Sandbox</li>
+            <li>Media tools for transcription, OCR, and image description</li>
+            <li>An AI Use Disclosure tool that records what you delegated</li>
+            <li>Agent Studio and Site Studio, for agentic coding</li>
+            <li>The providers store nothing from prompts or outputs</li>
+          </ul>
+        </div>
+        <aside class="notes">
+          The Tools Portal is where the lab puts standalone apps, separate from the chat Sandbox Zach showed you. Some handle media — transcription in dozens of languages, OCR for archival scans, alt-text for accessibility. There's a disclosure tool that gives a scholar a citable record of which tasks they handed to a model. The ones I want to dwell on are the agentic studios. All of it runs on zero-retention paths.
+        </aside>
+      </section>
+
+      <!-- Slide 3 — Agentic AI -->
+      <section id="agentic">
+        <h2>Working with agentic AI</h2>
+        <div class="content">
+          <ul>
+            <li>Agent Studio and Site Studio run agents for research and publishing</li>
+            <li>People use them for research and scholarly-communication work</li>
+            <li>It takes several steps to finish a task on its own</li>
+            <li>Faculty and students build working tools with little code</li>
+          </ul>
+        </div>
+        <aside class="notes">
+          The studios are how we put agentic AI in people's hands — not a chatbot you ask, but an agent you hand a task to. That shift, from asking to delegating, is what's reshaping research workflows and scholarly communication. Someone can build a small research tool or an academic site without writing every line, and learn what it means to work alongside an agent.
+        </aside>
+      </section>
+
+      <!-- Slide 4 — Kale Workbench -->
+      <section id="workbench">
+        <h2>Kale Workbench</h2>
+        <p class="kicker">governed coding-agent work</p>
+        <div class="content">
+          <ul>
+            <li>A browser workbench where a coding agent does the building</li>
+            <li>The agent only uses tools the lab has reviewed</li>
+            <li>Code runs in an on-demand sandbox, under budget caps and an audit trail</li>
+            <li>You approve any push or secret, then it hands off to Kale Deploy</li>
+          </ul>
+        </div>
+        <aside class="notes">
+          Workbench is our browser environment for governed coding-agent work. You work with a coding agent, but it can only call tools the lab has reviewed, and any code it runs happens in a sandbox that spins up on demand and is destroyed after. The whole session is under CUNY policy — sign-in, budget caps, an audit trail — and the agent can't push to GitHub or use a secret without your approval. When the project is ready, Workbench hands it off to Kale Deploy. (Active repo, roadmap maturity.)
+        </aside>
+      </section>
+
+      <!-- Slide 6 — Kale Deploy -->
+      <section id="deploy">
+        <h2>Kale Deploy</h2>
+        <p class="kicker">publish to a CUNY address</p>
+        <div class="content">
+          <ul>
+            <li>You push the repo, or hand off from Workbench, and it goes live at <code>&lt;project&gt;.cuny.qzz.io</code></li>
+            <li>It works the way Vercel or Netlify do, with the lab running it</li>
+            <li>The whole thing runs on Cloudflare Workers, and CUNY holds the credentials and policy</li>
+            <li>You see on the commit whether it worked</li>
+          </ul>
+        </div>
+        <aside class="notes">
+          Once something's built, Kale Deploy publishes it. A push, or a handoff from Workbench, and the project is live at a CUNY address. It works the way Vercel or Netlify do, except the lab operates it, on Cloudflare Workers, rather than each person renting space from a company. The institution holds the credentials and the policy. (Do not call this on-prem — it runs on Cloudflare.)
+        </aside>
+      </section>
+
+      <!-- Slide 7 — The web-application layer -->
+      <section id="stack">
+        <h2>From Sandbox to a live web app</h2>
+        <div class="content">
+          <div style="display: grid; grid-template-columns: 1fr auto 1fr auto 1fr; align-items: stretch; gap: 14px; margin: 10px 0 24px 0;">
+            <div class="stage">
+              <h3>Sandbox</h3>
+              <p>chat + open models<br>(Zach)</p>
+            </div>
+            <div class="arrow">&rarr;</div>
+            <div class="stage">
+              <h3>Workbench</h3>
+              <p>governed agent work</p>
+            </div>
+            <div class="arrow">&rarr;</div>
+            <div class="stage">
+              <h3>Kale Deploy</h3>
+              <p>live web app</p>
+            </div>
+          </div>
+          <ul>
+            <li>Workbench builds it under review, and Kale Deploy publishes it</li>
+            <li>You can check what runs at each step and who controls it</li>
+          </ul>
+        </div>
+        <aside class="notes">
+          This is the web-application layer of the lab's stack. People reach open models in the Sandbox; Workbench is where governed coding-agent work happens; Kale Deploy publishes the result. At each step you can see what's running and who controls it — accountable, and operated by the people who teach and research with it.
+        </aside>
+      </section>
+
+      <!-- Slide 8 — Handoff -->
+      <section id="handoff">
+        <h2>CUNY-run AI infrastructure</h2>
+        <div class="content">
+          <ul>
+            <li>Together they let CUNY run its own AI infrastructure</li>
+            <li>Built so the people who use it can inspect and operate it</li>
+          </ul>
+        </div>
+        <div class="footnote">CUNY AI Lab &middot; ailab.gc.cuny.edu</div>
+        <aside class="notes">
+          Put together, these let CUNY run its own AI infrastructure — accountable, interpretable, and operated by the people who use it for teaching and research.
+        </aside>
+      </section>
+
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
+  <script>
+    Reveal.initialize({
+      width: 1280,
+      height: 720,
+      margin: 0,
+      controls: true,
+      progress: true,
+      slideNumber: 'c/t',
+      hash: true,
+      transition: 'slide',
+      center: false,
+      plugins: [ RevealNotes ]
+    });
+  </script>
+</body>
+</html>
