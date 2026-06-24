@@ -90,34 +90,36 @@
       <!-- Slide 5 — Kale Workbench -->
       <section id="workbench">
         <h2>Kale Workbench</h2>
-        <p class="kicker">governed coding-agent work</p>
+        <p class="kicker">a coding agent in the browser</p>
         <div class="content">
           <ul>
-            <li>A browser workbench where a coding agent does the building</li>
-            <li>The agent only uses tools the lab has reviewed</li>
-            <li>Code runs in an on-demand sandbox, under budget caps and an audit trail</li>
-            <li>You approve any push or secret, then it hands off to Kale Deploy</li>
+            <li>Like Claude Code or Codex, run in the browser</li>
+            <li>On the lab's Cloudflare infrastructure, with open models</li>
+            <li>The lab runs it, so it sets the model and the limits</li>
+            <li>Nothing gets pushed or published without your approval</li>
+            <li>It hands off to Kale Deploy when a project is ready</li>
           </ul>
         </div>
         <aside class="notes">
-          Workbench is our browser environment for governed coding-agent work. You work with a coding agent, but it can only call tools the lab has reviewed, and any code it runs happens in a sandbox that spins up on demand and is destroyed after. The whole session is under CUNY policy — sign-in, budget caps, an audit trail — and the agent can't push to GitHub or use a secret without your approval. When the project is ready, Workbench hands it off to Kale Deploy. (Active repo, roadmap maturity.)
+          Kale Workbench is a web-based coding agent, the kind of thing Claude Code or Codex do in a terminal. The lab runs it, on Cloudflare, with open models by default. Because it is ours, we set the model and the spending limits, and the agent can't push to GitHub or publish without you. When a project is ready, it hands off to Kale Deploy. (Active repo, roadmap maturity.)
         </aside>
       </section>
 
       <!-- Slide 6 — Kale Deploy -->
       <section id="deploy">
         <h2>Kale Deploy</h2>
-        <p class="kicker">publish to a CUNY address</p>
+        <p class="kicker">live hosting at a CUNY address</p>
         <div class="content">
           <ul>
-            <li>You push the repo, or hand off from Workbench, and it goes live at <code>&lt;project&gt;.cuny.qzz.io</code></li>
-            <li>It works the way Vercel or Netlify do, with the lab running it</li>
-            <li>The whole thing runs on Cloudflare Workers, and CUNY holds the credentials and policy</li>
-            <li>You see on the commit whether it worked</li>
+            <li>Agents deploy it themselves, through an MCP server</li>
+            <li>Build with an agent, and it's live at <code>&lt;project&gt;.cuny.qzz.io</code></li>
+            <li>The first place CUNY students and faculty can publish live projects</li>
+            <li>It hosts many projects at once for very little</li>
+            <li>Users run their own projects</li>
           </ul>
         </div>
         <aside class="notes">
-          Once something's built, Kale Deploy publishes it. A push, or a handoff from Workbench, and the project is live at a CUNY address. It works the way Vercel or Netlify do, except the lab operates it, on Cloudflare Workers, rather than each person renting space from a company. The institution holds the credentials and the policy. (Do not call this on-prem — it runs on Cloudflare.)
+          Kale is an MCP server, so a coding agent can deploy a repo and check the result on its own. Build something with an agent and it's live at a CUNY address. CUNY students and faculty haven't had a place to put live, working projects like this before. And because it runs on Cloudflare's Workers for Platforms, the lab can host many projects at once for very little, and hand the running of each one to the person who built it.
         </aside>
       </section>
 
@@ -133,7 +135,7 @@
             <div class="arrow">&rarr;</div>
             <div class="stage">
               <h3>Workbench</h3>
-              <p>governed agent work</p>
+              <p>coding agent</p>
             </div>
             <div class="arrow">&rarr;</div>
             <div class="stage">
@@ -142,12 +144,12 @@
             </div>
           </div>
           <ul>
-            <li>Workbench builds it under review, and Kale Deploy publishes it</li>
-            <li>You can check what runs at each step and who controls it</li>
+            <li>A complete path, from an open model to a live app</li>
+            <li>Available to anyone at CUNY, hosted by the lab</li>
           </ul>
         </div>
         <aside class="notes">
-          This is the web-application layer of the lab's stack. People reach open models in the Sandbox; Workbench is where governed coding-agent work happens; Kale Deploy publishes the result. At each step you can see what's running and who controls it — accountable, and operated by the people who teach and research with it.
+          Here the three pieces fit together. Someone reaches open models in the Sandbox, builds with a coding agent in Workbench, and publishes through Kale Deploy. It runs on open models end to end, the lab hosts all of it, and anyone at CUNY can use it.
         </aside>
       </section>
 
